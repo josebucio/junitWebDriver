@@ -1,4 +1,4 @@
-package facebook;
+package face;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class FacebookBaseTest {
+public class FacebookBase {
 	
 	protected WebDriver driver;
 	
@@ -29,27 +29,25 @@ public class FacebookBaseTest {
 	//	driver.quit();
 	}
 	
-	public void likeAllPhotos() {
-		WebElement like;
-		WebElement photo;
+	public void sendMenssage () {
+		WebElement buttonmen;
+		WebElement textarea;
+		WebElement enviar;
 		
-		
-		
-		like = driver.findElement(By.xpath("//*[.='Me gusta']"));
-		
-		like.click();
-		
+		buttonmen = driver.findElement(By.xpath("//a[@href='/messages/t/GESTORIAVEHICULAR25/']"));
+	    buttonmen.click();
+	    
+	    textarea = driver.findElement(By.xpath("textarea[@name='message_body']"));
+	    textarea.isEnabled();
+	    textarea.sendKeys("Hola como estas?");
+	    
+	    enviar = driver.findElement(By.xpath("button[@class='_42ft _4jy0 layerConfirm _2ok uiOverlayButton _4jy4 _4jy1 selected _51sy']"));
+	    enviar.click();
+	    
+
 
 	}
 
-	public void gotoPhotos() {
-		WebElement gophoto;
-		
-		gophoto = driver.findElement(By.linkText("Fotos"));
-		
-		gophoto.click();
-		
-	}
 
 	public void searchFacebookFriend(String friendName) {
 		WebElement buscarpersona;

@@ -1,4 +1,4 @@
-package facebook;
+package face;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,7 +9,7 @@ import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
 
 @RunWith(JUnitParamsRunner.class)
-public class FacebookJUnitExample extends FacebookBaseTest{
+public class FacebookJUnit extends FacebookBase{
 	
 	@Test
 	@FileParameters("./data/params.csv")
@@ -22,14 +22,15 @@ public class FacebookJUnitExample extends FacebookBaseTest{
 		
 		searchFacebookFriend(friendName);
 	
-		gotoPhotos();
+		sendMenssage();
 		
-		likeAllPhotos();
 		
 		
 		
 		
 	}
+
+	
 
 	
 
