@@ -4,13 +4,13 @@ import org.junit.Test;
 
 public class ImdbTest extends ParentTest{
 	
-	@Test
+	/*@Test
 	public void testSearchMovie() {
 		navigateToPage("http://imdb.com");
 		validatePage();
 		searchMovie();
 		validateMovieExists();
-	}
+	}*/
 	
 	
 	@Test
@@ -28,7 +28,7 @@ public class ImdbTest extends ParentTest{
 	
 	
 
-	@Test
+	/*@Test
 	public void testValidateMovieStars() {
 		navigateToPage("http://imdb.com");
 		validatePage();
@@ -37,7 +37,7 @@ public class ImdbTest extends ParentTest{
 		selectMovie();
 		validateCorrectMovie();
 		validateMovieStars();
-	}
+	}*/
 
 	
 

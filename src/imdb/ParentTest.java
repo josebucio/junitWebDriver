@@ -4,7 +4,9 @@ import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
 import org.junit.Before;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ParentTest {
@@ -13,7 +15,7 @@ public class ParentTest {
 	
 	@Before
 	public void setUp() {
-		
+		System.setProperty("webdriver.chrome.driver", "C:\\test_automation\\drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		
@@ -27,17 +29,33 @@ public class ParentTest {
 		
 	}
 	protected void validateMovieExists() {
-		// TODO Auto-generated method stub
+		WebElement validarpeli;
+		
+		
+		
+		validarpeli = driver.findElement(By.xpath("//td[@class='result_text']/a[@href='/title/tt0099864/?ref_=fn_al_tt_2']"));
+		
+		
+		
 		
 	}
 
 	protected void searchMovie() {
-		// TODO Auto-generated method stub
+		WebElement buscarpeli;
+		WebElement botonbuscar;
 		
+		buscarpeli = driver.findElement(By.id("navbar-query"));
+		botonbuscar = driver.findElement(By.id("navbar-submit-button"));
+		
+		buscarpeli.clear();
+		buscarpeli.sendKeys("Eso");
+		botonbuscar.click();
 	}
 
 	protected void validatePage() {
-		// TODO Auto-generated method stub
+		//WebElement validpagina;
+		
+		//validpagina = driver.findElement(By.linkText("https://www.imdb.com/"));
 		
 	}
 
@@ -47,22 +65,40 @@ public class ParentTest {
 	}
 	
 	protected void playTrailer() {
-		// TODO Auto-generated method stub
+		WebElement trailer;
+		WebElement time;
+		String tiempo;
+		
+		trailer = driver.findElement(By.xpath("//a[@href='/video/imdb/vi3536037913?playlistId=tt0099864&ref_=tt_ov_vi']"));
+		time = driver.findElement(By.xpath("//div[contains(text(),':')]"));
+		tiempo = time.toString();
+		double ti = Double.valueOf(tiempo).doubleValue();
+		
+		trailer.click();
+		driver.manage().timeouts().implicitlyWait(10,  TimeUnit.SECONDS);
 		
 	}
 
 	protected void validateCorrectMovie() {
-		// TODO Auto-generated method stub
+		WebElement peliculacorrecta;
+		
+		peliculacorrecta = driver.findElement(By.linkText("It"));
 		
 	}
 
 	protected void selectMovie() {
-		// TODO Auto-generated method stub
+		WebElement pelicula;
+		
+		pelicula = driver.findElement(By.xpath("//td[@class='result_text']/a[@href='/title/tt0099864/?ref_=fn_al_tt_2']"));
+		pelicula.click();
+				
 		
 	}
 	
 	protected void validateMovieStars() {
-		// TODO Auto-generated method stub
+		WebElement validtrailer;
+		
+		//validtrailer =driver.findElement(By.)
 		
 	}
 
